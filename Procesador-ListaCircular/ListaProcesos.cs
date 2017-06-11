@@ -42,7 +42,8 @@
                 p.anterior = pr;
                 inicio.anterior = p;
             }
-            
+             if (cuantosHay() > _maxFormados)
+                _maxFormados = cuantosHay();
         }
 
         public Proceso sacarElemento()
@@ -89,6 +90,19 @@
                 if (turno == inicio)
                     inicio = turno.siguiente;
             }
+        }
+        private int cuantosHay()
+        {
+            int total = 0;
+            Proceso i = inicio;
+
+            do
+            {
+                total++;
+                i = i.siguiente;
+            } while (i != inicio);
+
+            return total;
         }
     }
 }
