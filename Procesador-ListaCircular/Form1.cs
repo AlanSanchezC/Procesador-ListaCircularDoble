@@ -17,17 +17,17 @@ namespace Procesador_ListaCircular
 
         private void btnEmpezar_Click(object sender, EventArgs e)
         {
-            for (int i = 1; i <= 20; i++)
+            for (int i = 1; i <= 100; i++)
             {
                 int num = aleatorio.Next(1, 5);
                 if (num == 1)
                 {
-                    Proceso p1 = new Proceso(aleatorio.Next(2, 6));
+                    Proceso p1 = new Proceso(aleatorio.Next(1, 13));
                     lista.agregar(p1);
                 }
-
-                procedimiento();
+                
                 lista.avanzar();
+                procedimiento();
                 num = 0;
             }
 
